@@ -1,0 +1,139 @@
+@import './theme.css';
+@import './home.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --ls-navy: #2B2B2B;
+        --ls-indigo: #EF1C14;
+        --ls-blue: #EF1C14;
+        --ls-light: #E6E6E6;
+        --ls-white: #ffffff;
+        --ls-mid: #7A7676;
+        --ls-ink: #5F5B5B;
+    }
+
+    body {
+        background: var(--bg-900);
+        color: var(--text-muted);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@layer components {
+    .ls-gradient {
+        background: linear-gradient(120deg, var(--ls-indigo), var(--ls-navy));
+    }
+
+    .ls-card {
+        @apply rounded-2xl bg-white/90 shadow-lg shadow-black/10 ring-1 ring-ls-navy/10;
+    }
+
+    .ls-section {
+        @apply py-16 md:py-24;
+    }
+
+    .ls-glow {
+        box-shadow: 0 24px 60px rgba(239, 28, 20, 0.18);
+    }
+
+    .ls-customer-bg {
+        background:
+            radial-gradient(circle at 10% 10%, rgba(239, 28, 20, 0.12), transparent 40%),
+            radial-gradient(circle at 90% 20%, rgba(43, 43, 43, 0.12), transparent 45%),
+            linear-gradient(180deg, #e6e6e6 0%, #f2f2f2 100%);
+    }
+
+    .ls-cropper-frame {
+        height: 200px;
+        width: 100%;
+    }
+
+    .ls-cropper-frame .cropper-container,
+    .ls-cropper-frame .cropper-canvas,
+    .ls-cropper-frame .cropper-wrap-box,
+    .ls-cropper-frame .cropper-drag-box {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .admin-shell {
+        @apply min-h-screen text-ls-navy;
+        background:
+            radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.8), transparent 45%),
+            radial-gradient(circle at 90% 10%, rgba(43, 43, 43, 0.08), transparent 50%),
+            linear-gradient(180deg, #f5f5f5 0%, #ededed 60%, #e5e5e5 100%);
+    }
+
+    .admin-sidebar {
+        background: linear-gradient(160deg, #2b2b2b 0%, #3b3838 55%, #2b2b2b 100%);
+        box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .admin-nav-link {
+        @apply flex items-center gap-2 rounded-lg px-3 py-2 text-white/80 transition;
+    }
+
+    .admin-nav-link:hover {
+        @apply text-white;
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .admin-nav-link.is-active {
+        @apply text-white;
+        background: rgba(239, 28, 20, 0.22);
+        box-shadow: inset 0 0 0 1px rgba(239, 28, 20, 0.4);
+    }
+
+    .admin-header {
+        @apply border-b border-white/60 bg-white/80 backdrop-blur;
+    }
+
+    .admin-card {
+        @apply rounded-2xl bg-white/90 shadow-lg shadow-black/10 ring-1 ring-black/5;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 100%);
+    }
+
+    .admin-table {
+        @apply overflow-hidden rounded-2xl bg-white/90 shadow-sm ring-1 ring-black/5;
+    }
+
+    .admin-table thead {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 246, 246, 0.9));
+    }
+
+    .admin-kicker {
+        @apply text-xs uppercase tracking-[0.3em] text-ls-ink;
+    }
+
+    .toy-hero {
+        background:
+            radial-gradient(circle at 15% 20%, rgba(239, 28, 20, 0.18), transparent 40%),
+            radial-gradient(circle at 85% 0%, rgba(43, 43, 43, 0.2), transparent 45%),
+            linear-gradient(135deg, #2b2b2b 0%, #3a3333 35%, #ef1c14 100%);
+    }
+
+    .toy-panel {
+        @apply rounded-3xl bg-white/90 shadow-xl shadow-black/10 ring-1 ring-black/5;
+    }
+
+    .toy-sticker {
+        @apply inline-flex items-center gap-2 rounded-full bg-ls-indigo/10 px-4 py-2 text-xs font-semibold text-ls-indigo;
+    }
+
+    .toy-card {
+        @apply overflow-hidden rounded-3xl bg-white/90 ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-2xl;
+        box-shadow: 0 18px 40px rgba(43, 43, 43, 0.12);
+    }
+
+    .toy-shelf {
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85)),
+            repeating-linear-gradient(90deg, rgba(43, 43, 43, 0.04) 0 14px, transparent 14px 28px);
+    }
+}
